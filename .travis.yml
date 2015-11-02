@@ -1,0 +1,22 @@
+language: ruby
+rvm:
+- 2.2.0
+branches:
+  only:
+  - master
+gemfile:
+- Gemfile
+before_script:
+- psql -c 'create database ex_rails_test_db' -U postgres
+- bundle exec rake db:create db:migrate db:schema:load
+deploy:
+  provider: heroku
+  api_key:
+    secure: MkMqZ6fP+zYBXBsTgi5qOMRhg0noMfeM3aKDt487g4eleoJqIZpVPFACzSnhKzm76sHaQKNuhfT00RZ2iDhLTghWCntLxyCfarisZH6ZNkuoHWth7K52TK8tHU45a/ckdpbxIRUzK58PCBxRQNrk7Lhvfsl3ZRmNWkgYxkXwxbbuF2AFpazePCjAUggYHwEnjpUhxWRaD9nmn6lFk6Q5ckcgj8FRTWrCGBm5H77QSAgyt6ymSZvF6l59wrRSKtfRJPu2VfZlmVw6dbSknVsPflGJxNHO9YSXt6IwZC5o3rHwbNwXLuQm+DvXnlOa+7VZg7xFcou7n8hHzA1NytmwDloVC7OgRoUI6UrjBh1NKnnIPy0xAgSkptW1OOBmPoJSlnPBzLFXd79Kqm9797+7Sqqyd52/XAw6w/+oHMJO3GjMh8IUbx4438mRCiIdBSzCYtAvPuzTdeTwXiSzDmjRPmk8qf9/oGIln7qJqWlUB56DvILsLmburySHqbYF+hk5anL+nXCYxS0O2e30bBJBT6iMl3EWq0o8KH76JBl3KA+D9xiz9nA/ULb3HBErvUCgLxtll8C2svLQNbrfvkcnbUfk+ICgZ4TS/rnsc4baKfXrH+cB/BDfykY9rX6tAIW/PaDC+VmKINZx9d/gEdzJQT+SPTE52RMdjJfO86nOBKY=
+  app: walkintour
+  run:
+  - rake db:migrate
+  - restart
+  on:
+    branch: master
+    rvm: 2.2.0
