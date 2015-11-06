@@ -4,7 +4,7 @@ body {
 }
 
 #container {
-  width: 100%;
+  /*width: 100%;*/
 }
 
 #logo {
@@ -76,6 +76,7 @@ body {
   background-color: #ffffff;
   margin-left: 860px;
   margin-right: 285px;
+  width: 395px;
 }
 
 #configuration-header th.line, #configuration-header td.line {
@@ -115,6 +116,7 @@ body {
   margin-right: 285px;
   padding: 15px 0px 15px 18px;
   font-size: 14px;
+  width: 378px;
 }
 
 #types-que {
@@ -130,6 +132,7 @@ body {
   padding-left: 20px;
   padding-right: 19px;
   min-height: 480px;
+  width: 357px;
 }
 
 .tab-type {
@@ -170,6 +173,7 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   min-height: 70px;
+  width: 366px;
 }
 
 #bellow-options a {
