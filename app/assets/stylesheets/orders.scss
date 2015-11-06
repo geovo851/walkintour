@@ -1,0 +1,309 @@
+body {
+  margin-left: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100%;
+}
+
+#logo {
+  padding: 20px 170px 20px 90px;
+  float: left;
+}
+
+.topmenu {
+  list-style: none;
+  float: left;
+  padding: 20px 0 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.topmenu li {
+  float: left;
+}
+
+.topmenu a {
+  display: block;
+  padding: 15px 20px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #777777;
+}
+
+.topmenu-right {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.topmenu a:hover, .topmenu a.active {
+  background-color: #649e33;
+  color: #ffffff;
+}
+
+#sign-in {
+  color: #1f7d60;
+}
+
+.topmenu a:hover#sign-in{
+  color: #ffffff;
+}
+
+#contact-us {
+  color: #649e33;
+}
+
+.topmenu a:hover#contact-us{
+  color: #ffffff;
+}
+
+#main-fon {
+  background: image-url('body.png') no-repeat;
+}
+
+#walkintour {
+  padding: 37px 170px 20px 90px;
+}
+
+#image-3d {
+  float: left;
+}
+
+#configuration-header {
+  background-color: #ffffff;
+  margin-left: 860px;
+  margin-right: 285px;
+}
+
+#configuration-header th.line, #configuration-header td.line {
+  border-right: 1px solid #e0e0e0;
+}
+
+#configuration-header th, #configuration-header td {
+  padding: 2px 15px 2px 15px;
+  font-size: 14px;
+}
+
+#configuration-header .introductory {
+  color: #81bf4c;
+  font-size: 13px;
+  padding-bottom: 8px;
+  font-weight: normal;
+}
+
+#configuration-header table {
+  padding: 10px 10px 10px 5px;
+}
+
+#configuration-header th {
+  font-weight: normal;
+  text-align: left;
+}
+
+#configuration-header td {
+  font-weight: bold;
+}
+
+#configuration-types {
+  background-color: #454545;
+  color: #ffffff;
+  margin-top: 7px;
+  margin-left: 860px;
+  margin-right: 285px;
+  padding: 15px 0px 15px 18px;
+  font-size: 14px;
+}
+
+#types-que {
+  vertical-align: middle;
+  padding-left: 50px;
+}
+
+#tab-types {
+  background-color: #f3f3f3;
+  margin-left: 860px;
+  margin-right: 285px;
+  padding-top: 25px;
+  padding-left: 20px;
+  padding-right: 19px;
+  min-height: 480px;
+}
+
+.tab-type {
+  height: 80px;
+  background-color: #ffffff;
+  margin-bottom: 6px;
+  width: 365px;
+}
+
+.type {
+  float: left;
+  padding-left: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.type-image {
+  float: right;
+  padding: 5px;
+}
+
+#tab-types .active {
+  border: 2px solid #81bf4c;
+}
+
+.tab-type:hover {
+  background-color: #f3f3f3;
+  border: 1px solid #81bf4c;
+  height: 78px;
+  width: 363px;
+}
+
+#bellow-options {
+  background-color: #ffffff;
+  margin-left: 860px;
+  margin-right: 285px;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 70px;
+}
+
+#bellow-options a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #414141;
+  padding: 15px 15px 15px;
+}
+
+#bellow-options a:hover, #bellow-options a.active {
+  background-color: #649e33;
+  color: #ffffff;
+}
+
+#bellow-options span {
+  vertical-align: 1px;
+}
+
+#bellow-options #previous {
+  color: #81bf4c;
+}
+
+#bellow-previous a {
+  float: left;
+}
+
+#bellow-slider {
+  float: left;
+  padding: 15px 30px 15px;
+}
+
+#bellow-next a {
+  float: right;
+}
+
+.content {
+  margin: 80px 285px 50px 90px;
+  color: #9d9d9d;
+}
+
+.body-left {
+  margin-right: 65px;
+  float: left;
+  width: 600px;
+  font-size: 13px;
+}
+
+.body-right {
+  float: right;
+  width: 494px;
+  font-size: 13px;
+}
+
+.content h1 {
+  color: #333333;
+  padding-bottom:15px;
+}
+
+.content h1 span {
+  color: #81bf4c;
+}
+
+.content p {
+  padding-bottom: 10px;
+}
+
+.content #video {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.body-right p {
+  padding-bottom: 100px;
+}
+
+#walk-future {
+  margin-top: 80px;
+}
+
+footer {
+  background-color: #222222;
+  width: 1366px;
+}
+
+#map {
+  float: left;
+  padding: 50px 75px 20px 90px;
+}
+
+footer .block {
+  padding-top: 50px;
+  padding-right: 135px;
+  color: #8e8e8e;
+  float: left;
+  font-size: 13px;
+}
+
+footer .block h2 {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+footer .block ul {
+  list-style: none;
+  padding: 0px;
+}
+
+footer .block a {
+  color: #8e8e8e;
+  text-decoration: none;
+}
+
+.follow-us {
+  padding-right: 5px;
+}
+
+#copyright {
+  margin-top: 20px;
+  margin-left: 90px;
+  margin-right: 120px;
+  border-top: 1px solid #333333;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  color: #8e8e8e;
+  text-align: center;
+  font-size: 12px;
+}
+
+#partnership {
+  background-color: #1f7e61;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #f0f6f4;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+}
