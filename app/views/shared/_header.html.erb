@@ -1,0 +1,19 @@
+<header>
+  <%= link_to root_path do %>
+    <%= image_tag 'logo.png', id: 'logo' %>
+  <% end %>
+  <nav>
+    <ul class="topmenu">
+      <li><%= link_to 'Home', '#' %></li>
+      <li><%= link_to 'Pricing', '#' %></li>
+      <li><%= link_to 'Why us', '#' %></li>
+      <li><%= link_to 'Contact us', '#', id: 'contact-us' %></li>
+    </ul>
+
+    <ul class="topmenu topmenu-right">
+      <li><%= link_to 'Order Now','#', class: 'active' %></li>
+      <li><%= link_to 'Sign In','#', id: 'sign-in' %></li>
+    </ul>
+  </nav>
+</header>
+<div class="clear"></div>
