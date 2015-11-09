@@ -1,11 +1,14 @@
 body {
-  margin-left: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 #container {
-  /*width: 100%;*/
+  width: 1366px;
+  margin: 0px auto;
 }
+
+/*header*/
 
 #logo {
   padding: 20px 170px 20px 90px;
@@ -36,7 +39,6 @@ body {
 
 .topmenu-right {
   padding-left: 100px;
-  padding-right: 100px;
 }
 
 .topmenu a:hover, .topmenu a.active {
@@ -60,6 +62,8 @@ body {
   color: #ffffff;
 }
 
+/*configuration*/
+
 #main-fon {
   background: image-url('body.png') no-repeat;
 }
@@ -76,7 +80,7 @@ body {
   background-color: #ffffff;
   margin-left: 860px;
   margin-right: 285px;
-  width: 395px;
+  width: 396px;
 }
 
 #configuration-header th.line, #configuration-header td.line {
@@ -113,15 +117,21 @@ body {
   color: #ffffff;
   margin-top: 7px;
   margin-left: 860px;
-  margin-right: 285px;
-  padding: 15px 0px 15px 18px;
+  padding: 7px 0px 7px 19px;
   font-size: 14px;
-  width: 378px;
+  width: 377px;
+  height: 30px;
+}
+
+#configuration-type {
+  padding-top: 7px;
+  float: left;
 }
 
 #types-que {
-  vertical-align: middle;
-  padding-left: 50px;
+  padding-top: 2px;
+  padding-right: 17px;
+  float: right;
 }
 
 #tab-types {
@@ -132,18 +142,19 @@ body {
   padding-left: 20px;
   padding-right: 19px;
   min-height: 480px;
-  width: 357px;
+  width: 357px;   font-size: 14px;
 }
 
 .tab-type {
   height: 80px;
   background-color: #ffffff;
   margin-bottom: 6px;
-  width: 365px;
+  border: 2px solid #ffffff;
 }
 
 .type {
   float: left;
+  width: 250px;
   padding-left: 20px;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -160,9 +171,15 @@ body {
 
 .tab-type:hover {
   background-color: #f3f3f3;
-  border: 1px solid #81bf4c;
-  height: 78px;
-  width: 363px;
+  border: 2px solid #81bf4c;
+}
+
+.type-rows {
+  float: left;
+  width: 250px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #bellow-options {
@@ -181,6 +198,8 @@ body {
   font-weight: bold;
   color: #414141;
   padding: 15px 15px 15px;
+  font-size: 13px;
+  font-family: cursive;
 }
 
 #bellow-options a:hover, #bellow-options a.active {
@@ -202,12 +221,157 @@ body {
 
 #bellow-slider {
   float: left;
-  padding: 15px 30px 15px;
+  padding: 15px 48px 15px;
 }
 
 #bellow-next a {
   float: right;
 }
+
+/*form*/
+#tab-types .control-label {
+  color: #333333;
+  padding-left: 19px;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#tab-types textarea {
+  padding-left: 19px;
+  padding-top: 18px;
+  width: 335px;
+  height: 64px;
+  font-size: 14px;
+  resize: none;
+  border: none;
+}
+
+.padding-top-label {
+  padding-top: 20px;
+}
+
+#tab-types input {
+  padding-left: 19px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 335px;
+  font-size: 14px;
+  border: none;
+}
+
+.pick-appointment {
+  background-color: #81bf4c;
+  padding: 6px 6px;
+  font-size: 14px;  text-align: center;
+}
+
+.pick-appointment  a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#tab-types .control-label span {
+  font-size: 8px;
+  font-weight: normal;
+}
+
+.numbers {
+  padding-left: 19px;
+  width: 335px;
+  height: 40px;
+}
+
+.numbers .minus, .numbers .plus{
+  padding: 8px 10px;
+  float: left;
+  background-color: #ffffff;
+  color: #81bf4c;
+  margin-right: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+input#number, input#detach-space {
+  background-color: #ffffff;
+  color: #969696;
+  border: 1px solid #e4e4e4;
+  width: 40px;
+  height: 18px;
+  float: left;
+  margin-right: 4px;
+  text-align: center;
+  padding: 8px 10px;
+}
+
+
+.submit-next {
+  width:  86px;
+  height: 47px;
+  margin: 0;
+  border: 0;
+  background-color: #649e33;
+  color: #ffffff;
+  font-weight: bold;
+  float: right;
+  font-family: cursive;
+  font-size: 13px;
+}
+
+/*exterior-tour-plus*/
+
+.exterior-tour-plus {
+  margin-top: 40px;
+  margin-left: 90px;
+}
+
+.exterior-tour-plus-fon {
+  background-color: #1b4f29;
+  margin-top: -35px;
+  height: 50px;
+}
+
+.paragraph {
+  padding-left: 90px;
+  padding-right: 350px;
+  padding-bottom: 20px;
+  background-color: #1b4f29;
+  color: #ffffff;
+  font-size: 11px;
+}
+
+
+/*finish*/
+
+#bellow-slider-finish {
+  float: left;
+  padding: 15px 30px 15px;
+}
+
+#selected {
+  color: #649e33;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.row {
+  height: 20px;
+  border-bottom: 1px solid #e2e2e2;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.col-left {
+  float: left;
+  color: #4d4d4d;
+}
+
+.col-right {
+  float: right;
+  color: #9b9b9b;
+}
+
+/*content*/
 
 .content {
   margin: 80px 0px 50px 90px;
@@ -248,6 +412,8 @@ body {
 .body-right p {
   padding-bottom: 100px;
 }
+
+/*footer*/
 
 #walk-future {
   margin-top: 80px;

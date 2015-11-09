@@ -1,0 +1,114 @@
+<div id="walkintour">
+  <%= image_tag 'walkintour.png' %>
+</div>
+<div id="image-3d">
+  <%= image_tag '3d-image.png' %>
+</div>
+
+<%= render 'shared/configuration_header' %>
+
+<div id="configuration-types">
+  <div id="configuration-type">
+    Tell us more about Your Property
+  </div>
+  <div id="types-que">
+    <%= image_tag 'types_que.png' %>
+  </div>
+</div>
+
+<%= form_for @order, remote: true do |f| %>
+
+  <div id="tab-types">
+    <div class="control-label">
+      <%= f.label :property_address %>
+    </div>
+    <div>
+      <%= f.text_area :property_address, autofocus: true,
+                       placeholder: 'Property Address, City, State, Zip Code' %>
+    </div>
+
+    <div class="control-label padding-top-label">
+      <%= f.label :sqft %>
+    </div>
+    <div class="form-control">
+      <%= f.text_field :sqft, size: 22, placeholder: 'Property Sqft' %>
+    </div>
+
+    <div class="control-label padding-top-label">
+      Access
+    </div>
+    <div class="pick-appointment">
+      <%= link_to 'Click to Pick Appointment Preferences', '#' %>
+    </div>
+
+    <div class="control-label padding-top-label">
+      Number of Units
+    </div>
+    <div class="numbers">
+      <div class="minus" id="number-of-units-minus">-</div>
+      <div><%= f.text_field :number_of_units, readonly: true, id: "number" %></div>
+      <div class="plus" id="number-of-units-plus">+</div>
+    </div>
+
+    <div class="control-label padding-top-label clear-left">
+      Additional Detach Space <span>like Attic/Basement&amp;Buildings</span>
+    </div>
+
+    <div class="numbers">
+      <div class="minus" id="detach-space-minus">-</div>
+      <div><%= f.text_field :detach_space, readonly: true, id: "detach-space" %></div>
+      <div class="plus" id="detach-space-plus">+</div>
+    </div>
+
+  </div>
+
+  <div id="bellow-options">
+
+    <div id="bellow-previous">
+      <%= link_to property_type_path, remote: true do %>
+        <span id="previous">&lt;</span>
+        PREVIOUS
+      <% end %>
+    </div>
+
+    <div id="bellow-slider">
+       <%= image_tag 'sl-gray.png' %> <%= image_tag 'sl-green.png' %>
+    </div>
+
+    <div id="bellow-next">
+      <%= f.submit "NEXT >", class: 'submit-next', remote: true %>
+    </div>
+
+  </div>
+
+<% end %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".minus").click(function() {
+      if($(this).attr("id") == "number-of-units-minus") {
+        var i = parseInt($("#number").val());
+        i = (--i < 0)? 0 : i;
+        $("#number").val(i);
+      }
+      else {
+        var i = parseInt($("#detach-space").val());
+        i = (--i < 0)? 0 : i;
+        $("#detach-space").val(i);
+      }
+    });
+
+    $(".plus").click(function() {
+      if($(this).attr("id") == "number-of-units-plus") {
+        var i = parseInt($("#number").val());
+        i = (++i < 0)? 0 : i;
+        $("#number").val(i);
+      }
+      else {
+        var i = parseInt($("#detach-space").val());
+        i = (++i < 0)? 0 : i;
+        $("#detach-space").val(i);
+      }
+    });
+  });
+</script>

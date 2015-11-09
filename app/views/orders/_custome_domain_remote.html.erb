@@ -1,0 +1,80 @@
+<div id="walkintour">
+  <%= image_tag 'custome-domain-walkintour.png' %>
+</div>
+<div id="image-3d">
+  <%= image_tag 'custome-domain.png' %>
+</div>
+
+<%= render 'shared/configuration_header' %>
+
+<div id="configuration-types">
+  <div id="configuration-type">
+    Add Custome Domain to Your Website
+  </div>
+  <div id="types-que">
+    <%= image_tag 'types_que.png' %>
+  </div>
+</div>
+
+<div id="tab-types">
+  <div class="tab-type <%= @order.custome_domain ? '' : 'active' %>" id="false">
+    <div class="type">
+      No Custome Domain
+    </div> 
+    <div class="type-image"><%= image_tag 'type-image.png' %></div>
+  </div>
+
+  <div class="tab-type <%= @order.custome_domain ? 'active' : '' %>" id="true">
+    <div class="type">
+      Add Custome Domain (+19.99)
+    </div> 
+    <div class="type-image"><%= image_tag 'type-image.png' %></div>
+  </div>
+</div>
+
+<div id="bellow-options">
+
+  <div id="bellow-previous">
+    <%= link_to floor_plan_path, remote: true do %>
+      <span id="previous">&lt;</span>
+      PREVIOUS
+    <% end %>
+  </div>
+
+  <div id="bellow-slider">
+       <%= image_tag 'sl-gray.png' %> <%= image_tag 'sl-gray.png' %>
+       <%= image_tag 'sl-gray.png' %> <%= image_tag 'sl-green.png' %>
+  </div>
+
+  <div id="bellow-next">
+    <%= link_to review_path(id: @order.custome_domain), remote: true, class: 'active', id: 'next' do %>
+      NEXT
+      <span>&gt;</span>
+    <% end %>
+  </div>
+</div>
+
+<div class="clear"></div>
+<div class="exterior-tour-plus">
+  <%= image_tag 'custome-domain-plus.png' %>
+</div>
+<div class="exterior-tour-plus-fon"></div>
+<div class="paragraph">- Included with every order, our attractive website templatetakes only minutes to modify
+</div>
+<div class="paragraph">- Add a custom domain to make your single property  websiteeas to remember
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $(".tab-type").click(function() {
+      if (!$(this).hasClass("active")) {
+        $(".tab-type").removeClass("active");
+        $(this).addClass("active");
+
+        $("#next").attr("href", "/review?id=" + $(this).attr("id"));
+      }
+    });
+
+  });
+</script>

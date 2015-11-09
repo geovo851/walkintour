@@ -1,0 +1,67 @@
+<div id="walkintour">
+  <%= image_tag 'walkintour.png' %>
+</div>
+<div id="image-3d">
+  <%= image_tag '3d-image.png' %>
+</div>
+
+<%= render 'shared/configuration_header' %>
+
+<div id="configuration-types">
+  <div id="configuration-type">
+    Tell us more about Your Property Type
+  </div>
+  <div id="types-que">
+    <%= image_tag 'types_que.png' %>
+  </div>
+</div>
+
+<div id="tab-types">
+
+  <% @property_types.each do |property_type| %>
+    <div class="tab-type <%= active_property_type property_type.id %>" id="<%= property_type.id %>">
+      <div class="type">
+        <%= property_type.title %>
+      </div> 
+      <div class="type-image"><%= image_tag 'type-image.png' %></div>
+    </div>
+  <% end %>
+
+</div>
+
+<div id="bellow-options">
+
+  <div id="bellow-previous">
+    <%= link_to '#' do %>
+      <span id="previous">&lt;</span>
+      PREVIOUS
+    <% end %>
+  </div>
+
+  <div id="bellow-slider">
+      <%= image_tag 'sl-green.png' %> <%= image_tag 'sl-gray.png' %>
+  </div>
+
+  <div id="bellow-next">
+    <%= link_to about_property_path(id: @property_type_id), remote: true, class: 'active', id: 'next' do %>
+      NEXT
+      <span>&gt;</span>
+    <% end %>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $(".tab-type").click(function() {
+      if (!$(this).hasClass("active")) {
+        $(".tab-type").removeClass("active");
+        $(this).addClass("active");
+
+        $("#next").attr("href", "/about_property?id=" + $(this).attr("id"));
+      }
+    });
+
+  });
+</script>

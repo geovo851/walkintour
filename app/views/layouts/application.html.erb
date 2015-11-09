@@ -5,12 +5,23 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript">
+  window.onerror = function(msg, url, line) {
+  if(onerror.num++ < onerror.max) {
+    alert("ОШИБКА: " + msg + "\n" + url + ":" + line);
+  }
+};
+onerror.max = 3;
+onerror.num = 0;
+</script>
 </head>
 <body>
 
   <div id="container">
     <header>
-      <%= image_tag 'logo.png', id: 'logo' %>
+      <%= link_to root_path do %>
+        <%= image_tag 'logo.png', id: 'logo' %>
+      <% end %>
       <nav>
         <ul class="topmenu">
           <li><%= link_to 'Home', '#' %></li>
@@ -28,89 +39,10 @@
     <div class="clear"></div>
 
     <div id="main-fon">
-      <div id="walkintour">
-        <%= image_tag 'walkintour.png' %>
-      </div>
-      <div id="image-3d">
-        <%= image_tag '3d-image.png' %>
-      </div>
-      <div id="configuration-header">
-        <table>
-          <thead>
-            <tr>
-              <th class="line">Your configuration</th>
-              <th class="line">Save</th>
-              <th>Competitors</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="line">$599.00</td>
-              <td class="line">$62.00</td>
-              <td>$1000.00</td>
-            </tr>
-            <tr>
-              <td class="introductory">Introductory Offer</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
 
-      <div id="configuration-types">
-        Tell us more about Your Property Type <%= image_tag 'types_que.png', id: 'types-que' %>
-      </div>
+      <%= yield %>
 
-      <div id="tab-types">
-        <div class="tab-type active">
-          <div class="type">
-            Residential
-          </div> 
-          <div class="type-image"><%= image_tag 'type-image.png' %></div>
-        </div>
 
-        <div class="tab-type">
-          <div class="type">
-            Commercial
-          </div> 
-          <div class="type-image"><%= image_tag 'type-image.png' %></div>
-        </div>
-
-        <div class="tab-type">
-          <div class="type">
-            Business
-          </div> 
-          <div class="type-image"><%= image_tag 'type-image.png' %></div>
-        </div>
-
-        <div class="tab-type">
-          <div class="type">
-            Lots
-          </div> 
-          <div class="type-image"><%= image_tag 'type-image.png' %></div>
-        </div>
-      </div>
-
-      <div id="bellow-options">
-
-        <div id="bellow-previous">
-          <%= link_to '#' do %>
-            <span id="previous">&lt</span>
-            PREVIOUS
-          <% end %>
-        </div>
-
-        <div id="bellow-slider">
-            <%= image_tag 'sl-green.png' %> <%= image_tag 'sl-gray.png' %>
-        </div>
-
-        <div id="bellow-next">
-          <%= link_to '#', class: 'active' do %>
-            NEXT
-            <span>&gt</span>
-          <% end %>
-        </div>
-
-      </div>
       <div class="clear"></div>
       <div class="content">
         <div class="body-left">
@@ -150,9 +82,6 @@
 
       <div class="clear"></div>
 
-      <div>
-
-      </div>
     </div>
 
     <footer>

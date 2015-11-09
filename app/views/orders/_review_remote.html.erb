@@ -1,0 +1,118 @@
+<div id="walkintour">
+  <%= image_tag 'walkintour.png' %>
+</div>
+<div id="image-3d">
+  <%= image_tag '3d-image.png' %>
+</div>
+
+<%= render 'shared/configuration_header' %>
+
+<div id="configuration-types">
+  <div id="configuration-type">
+    Pls Review Your Order
+  </div>
+  <div id="types-que">
+    <%= image_tag 'types_que.png' %>
+  </div>
+</div>
+
+<div id="tab-types">
+  <div id="selected">
+    Selected
+  </div>
+
+  <div class="row">
+    <div class="col-left">
+      Property Type
+    </div>
+    <div class="col-right">
+     <%= @order.property_type.title %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-left">
+     Sqft
+    </div>
+    <div class="col-right">
+      <%= @order.sqft %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-left">
+      Number of Units
+    </div>
+    <div class="col-right">
+      <%= @order.number_of_units %> 
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-left">
+      Access
+    </div>
+    <div class="col-right">
+      Combo Code: 5143
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-left">
+      Exterior Tour
+    </div>
+    <div class="col-right">
+      <%= @order.exterior_tour ? 'Yes' : 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-left">
+      2D Plan
+    </div>
+    <div class="col-right">
+      <%= @order.floor_plan ? 'Yes' : 'No' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-left">
+      Still Photo
+    </div>
+    <div class="col-right">
+      <%= truncate(@order.photo.title, length: 30) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-left">
+      Custom Domain
+    </div>
+    <div class="col-right">
+      <%= @order.custome_domain ? 'Yes' : 'No' %>
+    </div>
+  </div>
+
+</div>
+
+<div id="bellow-options">
+
+  <div id="bellow-previous">
+    <%= link_to custome_domain_path, remote: true do %>
+      <span id="previous">&lt;</span>
+      PREVIOUS
+    <% end %>
+  </div>
+
+  <div id="bellow-slider-finish">
+      <%= image_tag 'sl-gray.png' %> <%= image_tag 'sl-green.png' %>
+      <%= image_tag 'sl-gray.png' %>
+  </div>
+
+  <div id="bellow-next">
+    <%= link_to '#', class: 'active' do %>
+      ADD TO CART
+    <% end %>
+  </div>
+
+</div>

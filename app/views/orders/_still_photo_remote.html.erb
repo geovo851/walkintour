@@ -1,0 +1,76 @@
+<div id="walkintour">
+  <%= image_tag 'exterior-tour-walkintour.png' %>
+</div>
+<div id="image-3d">
+  <%= image_tag 'still-photo.png' %>
+</div>
+
+<%= render 'shared/configuration_header' %>
+
+<div id="configuration-types">
+  <div id="configuration-type">
+    Add Still Photo
+  </div>
+  <div id="types-que">
+    <%= image_tag 'types_que.png' %>
+  </div>
+</div>
+
+<div id="tab-types">
+
+  <% @photos.each do |photo| %>
+    <div class="tab-type <%= active_still_photo photo.id %>" id="<%= photo.id %>">
+      <div class="type<%= photo.id != 1 ? '-rows' : '' %>">
+        <%= photo.title %>
+      </div> 
+      <div class="type-image"><%= image_tag 'type-image.png' %></div>
+    </div>
+  <% end %>
+</div>
+
+<div id="bellow-options">
+
+  <div id="bellow-previous">
+    <%= link_to exterior_path, remote: true do %>
+      <span id="previous">&lt;</span>
+      PREVIOUS
+    <% end %>
+  </div>
+
+  <div id="bellow-slider">
+      <%= image_tag 'sl-gray.png' %> <%= image_tag 'sl-green.png' %>
+      <%= image_tag 'sl-gray.png' %> <%= image_tag 'sl-gray.png' %>
+  </div>
+
+  <div id="bellow-next">
+    <%= link_to floor_plan_path(id: @photo_id), remote: true, class: 'active', id: 'next' do %>
+      NEXT
+      <span>&gt;</span>
+    <% end %>
+  </div>
+</div>
+
+<div class="clear"></div>
+<div class="exterior-tour-plus">
+  <%= image_tag 'still-photo-plus.png' %>
+</div>
+<div class="exterior-tour-plus-fon"></div>
+<div class="paragraph">- we can create traditional home layouts more quickly and affordably than ever before.
+</div>
+<div class="paragraph">- Hand out our new-construction style flor plan featuring your branding to make a lasting impressing on your buyers and sellers (required 2-3 business days to create)
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $(".tab-type").click(function() {
+      if (!$(this).hasClass("active")) {
+        $(".tab-type").removeClass("active");
+        $(this).addClass("active");
+
+        $("#next").attr("href", "/floor_plan?id=" + $(this).attr("id"));
+      }
+    });
+
+  });
+</script>

@@ -1,0 +1,80 @@
+<div id="walkintour">
+  <%= image_tag 'exterior-tour-walkintour.png' %>
+</div>
+<div id="image-3d">
+  <%= image_tag 'exterior-tour.png' %>
+</div>
+
+<%= render 'shared/configuration_header' %>
+
+<div id="configuration-types">
+  <div id="configuration-type">
+    Add Exterior WALKINTOUR
+  </div>
+  <div id="types-que">
+    <%= image_tag 'types_que.png' %>
+  </div>
+</div>
+
+<div id="tab-types">
+  <div class="tab-type <%= @order.exterior_tour ? '' : 'active' %>" id="false">
+    <div class="type">
+      No Exterior WALKINTOUR
+    </div> 
+    <div class="type-image"><%= image_tag 'type-image.png' %></div>
+  </div>
+
+  <div class="tab-type <%= @order.exterior_tour ? 'active' : '' %>" id="true">
+    <div class="type">
+      Add Exterior WALKINTOUR (+100)
+    </div> 
+    <div class="type-image"><%= image_tag 'type-image.png' %></div>
+  </div>
+</div>
+
+<div id="bellow-options">
+
+  <div id="bellow-previous">
+    <%= link_to about_property_path, remote: true do %>
+      <span id="previous">&lt;</span>
+      PREVIOUS
+    <% end %>
+  </div>
+
+  <div id="bellow-slider">
+      <%= image_tag 'sl-green.png' %> <%= image_tag 'sl-gray.png' %>
+      <%= image_tag 'sl-gray.png' %> <%= image_tag 'sl-gray.png' %>
+  </div>
+
+  <div id="bellow-next">
+    <%= link_to still_photo_path(id: @order.exterior_tour), remote: true, class: 'active', id: 'next' do %>
+      NEXT
+      <span>&gt;</span>
+    <% end %>
+  </div>
+</div>
+
+<div class="clear"></div>
+<div class="exterior-tour-plus">
+  <%= image_tag 'exterior-tour-plus.png' %>
+</div>
+<div class="exterior-tour-plus-fon"></div>
+<div class="paragraph">- We have revolutionaized the visualization of outdoor space so that you acn feature the exterior selling points of your 3D WALKINTOUR. Give your buyers the freedom to explore the entirety of the property, experienceing the home inside and out.
+</div>
+<div class="paragraph">- Further distinguish our marketing strategy by adding an Exterioir WALKINTOUR to your order
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $(".tab-type").click(function() {
+      if (!$(this).hasClass("active")) {
+        $(".tab-type").removeClass("active");
+        $(this).addClass("active");
+
+        $("#next").attr("href", "/still_photo?id=" + $(this).attr("id"));
+      }
+    });
+
+  });
+</script>
