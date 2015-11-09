@@ -5,15 +5,6 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <script type="text/javascript">
-  window.onerror = function(msg, url, line) {
-  if(onerror.num++ < onerror.max) {
-    alert("ОШИБКА: " + msg + "\n" + url + ":" + line);
-  }
-};
-onerror.max = 3;
-onerror.num = 0;
-</script>
 </head>
 <body>
 
