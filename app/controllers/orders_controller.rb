@@ -142,7 +142,7 @@ class OrdersController < ApplicationController
     def set_order
       @order = Order.find(session[:order_id])
     rescue ActiveRecord::RecordNotFound
-      @order = Order.create
+      @order = Order.create(property_type_id: 1, photo_id: 1)
       session[:order_id] = @order.id
     end
 
