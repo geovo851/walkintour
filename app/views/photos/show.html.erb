@@ -1,0 +1,7 @@
+<div class="admin-panel">
+  <h1><%= @photo.title %></h1>
+  <ul>
+    <li>Id: <%= @photo.id %></li>
+  </ul>
+  <div><%= button_to 'Back', photos_path, method: :get, class: "btn btn-default" %></div>
+</div>

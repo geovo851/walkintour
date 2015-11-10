@@ -1,0 +1,9 @@
+<% provide(:admin, 'active') %>
+<div class="admin-panel">
+  <h1>Admin panel</h1>
+  <div>
+    <%= link_to 'Orders', orders_path, class: "btn btn-info" %>
+    <%= link_to 'Property types', property_types_path, class: "btn btn-info" %>
+    <%= link_to 'Photo types', photos_path, class: "btn btn-info" %>
+  </div>
+</div>

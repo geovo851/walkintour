@@ -1,0 +1,36 @@
+<div class="admin-panel">
+  <h1>Photo types</h1>
+  <p>
+    <%= button_to new_photo_path, method: :get, class: 'btn btn-primary' do %>
+      <span class="glyphicon"></span>
+      Add photo type
+    <% end %>
+  </p>
+
+  <% if @photos.empty? %>
+    <b>No photo types</b>
+  <% else %>
+
+  <div class="table-index">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody id="photos">
+        <%= render partial: "photo", :collection => @photos, as: :photo %>
+      </tbody>
+    </table>
+  </div>
+  <div id="paginator", class="paginate-centre">
+    <%= paginate @photos, remote: true %>
+  </div>
+  <% end %>
+
+  <p>
+    <%= button_to 'Back', admin_path, method: :get, class: "btn btn-default" %>
+  </p>
+</div>

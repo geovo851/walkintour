@@ -1,0 +1,16 @@
+<div class="admin-panel">
+  <h1>Order: <%= @order.id %></h1>
+  <ul>
+    <li>Id: <%= @order.id %></li>
+    <li>Property type: <%= @order.property_type.title %></li>
+    <li>Property address: <%= @order.property_address %></li>
+    <li>Sqft: <%= @order.sqft %></li>
+    <li>Number of units: <%= @order.number_of_units %></li>
+    <li>Exterior tour: <%= @order.exterior_tour ? 'Yes' : 'No' %></li>
+    <li>Floor plan: <%= @order.floor_plan ? 'Yes' : 'No' %></li>
+    <li>Photo type: <%= @order.photo.title %></li>
+    <li>Custome domain: <%= @order.custome_domain ? 'Yes' : 'No' %></li>
+    <li>Detach space: <%= @order.detach_space %></li>
+  </ul>
+  <div><%= button_to 'Back', orders_path, method: :get, class: "btn btn-default" %></div>
+</div>

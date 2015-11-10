@@ -1,0 +1,3 @@
+$('tbody#property_types').html('<%= escape_javascript render(partial: "property_type", :collection => @property_types, :as => :property_type) %>');
+
+$('#paginator').html('<%= escape_javascript(paginate(@property_types, :remote => true).to_s) %>');

@@ -1,0 +1,10 @@
+<tr>
+  <td class="right"><%= property_type.id %></td>
+  <td><%= link_to property_type.title, property_type_path(property_type) %></td>
+  <td><%= button_to 'Edit', edit_property_type_path(property_type),
+                     method: :get, class: "btn btn-success btn-xs" %></td>
+  <td><%= button_to 'Delete', property_type_path(property_type),
+                     method: :delete,
+                     data: { confirm: 'Are you sure?' },
+                     class: "btn btn-danger btn-xs" %></td>
+</tr>

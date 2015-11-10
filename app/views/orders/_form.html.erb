@@ -1,0 +1,68 @@
+<%= form_for @order do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <div>
+    <%= f.label :property_type_id %>
+  </div>
+  <div>
+    <%= f.collection_select(:property_type_id, @property_types, 
+              :id, :title, {:prompt => 'Please select property type'}) %>
+  </div>
+
+  <div>
+    <%= f.label :property_address %>
+  </div>
+  <div>
+    <%= f.text_area :property_address, cols: 60, rows: 5 %>
+  </div>
+
+  <div>
+    <%= f.label :photo_id, 'Photo type' %>
+  </div>
+  <div>
+    <%= f.collection_select(:photo_id, @photos, 
+              :id, :title, {:prompt => 'Please select photo type'}) %>
+  </div>
+
+  <div>
+    <%= f.label :sqft %>
+  </div>
+  <div>
+    <%= f.text_field :sqft, size: 10 %>
+  </div>
+
+  <div>
+    <%= f.label :number_of_units %>
+  </div>
+  <div>
+    <%= f.text_field :number_of_units, size: 10 %>
+  </div>
+
+  <div>
+    <%= f.label :detach_space %>
+  </div>
+
+  <div>
+    <%= f.text_field :detach_space, size: 10 %>
+  </div>
+
+  <div>
+    <%= f.check_box :exterior_tour %><%= f.label :exterior_tour %>
+  </div>
+
+  <div>
+    <%= f.check_box :floor_plan %><%= f.label :floor_plan %>
+  </div>
+
+  <div>
+    <%= f.check_box :custome_domain %><%= f.label :custome_domain %>
+  </div>
+
+  <%= hidden_field_tag(:redirect_to_orders, true) %>
+
+  <div class="group-submit">
+    <%= f.submit title_sumbit, class: "btn btn-primary" %>
+    <%= link_to 'Сancel', :back, class: "btn btn-default" %>
+  </div>
+
+<% end %>

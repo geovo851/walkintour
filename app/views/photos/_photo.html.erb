@@ -1,0 +1,10 @@
+<tr>
+  <td class="right"><%= photo.id %></td>
+  <td><%= link_to photo.title, photo_path(photo) %></td>
+  <td><%= button_to 'Edit', edit_photo_path(photo),
+                     method: :get, class: "btn btn-success btn-xs" %></td>
+  <td><%= button_to 'Delete', photo_path(photo),
+                     method: :delete,
+                     data: { confirm: 'Are you sure?' },
+                     class: "btn btn-danger btn-xs" %></td>
+</tr>

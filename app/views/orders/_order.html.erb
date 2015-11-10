@@ -1,0 +1,18 @@
+<tr>
+  <td class="right"><%= link_to order.id, order_path(order) %></td>
+  <td><%= order.property_type.title %></td>
+  <td><%= order.property_address %></td>
+  <td class="right"><%= order.sqft %></td>
+  <td class="right"><%= order.number_of_units %></td>
+  <td class="right"><%= order.detach_space %></td>
+  <td><%= order.photo.title %></td>
+  <td class="centre"><%= order.exterior_tour ? 'Yes' : 'No' %></td>
+  <td class="centre"><%= order.floor_plan ? 'Yes' : 'No' %></td>
+  <td class="centre"><%= order.custome_domain ? 'Yes' : 'No' %></td>
+  <td><%= button_to 'Edit', edit_order_path(order),
+                     method: :get, class: "btn btn-success btn-xs" %></td>
+  <td><%= button_to 'Delete', order_path(order),
+                     method: :delete,
+                     data: { confirm: 'Are you sure?' },
+                     class: "btn btn-danger btn-xs" %></td>
+</tr>

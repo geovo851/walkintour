@@ -1,0 +1,36 @@
+<div class="admin-panel">
+  <h1>Property types</h1>
+  <p>
+    <%= button_to new_property_type_path, method: :get, class: 'btn btn-primary' do %>
+      <span class="glyphicon"></span>
+      Add property type
+    <% end %>
+  </p>
+
+  <% if @property_types.empty? %>
+    <b>No property types</b>
+  <% else %>
+
+  <div class="table-index">
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody id="property_types">
+        <%= render partial: "property_type", :collection => @property_types, as: :property_type %>
+      </tbody>
+    </table>
+  </div>
+  <div id="paginator", class="paginate-centre">
+    <%= paginate @property_types, :remote => true %>
+  </div>
+  <% end %>
+
+  <p>
+    <%= button_to 'Back', admin_path, method: :get, class: "btn btn-default" %>
+  </p>
+</div>

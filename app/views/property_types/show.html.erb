@@ -1,0 +1,7 @@
+<div class="admin-panel">
+  <h1><%= @property_type.title %></h1>
+  <ul>
+    <li>Id: <%= @property_type.id %></li>
+  </ul>
+  <div><%= button_to 'Back', property_types_path, method: :get, class: "btn btn-default" %></div>
+</div>

@@ -1,11 +1,17 @@
-body {
+html,body {
   margin: 0px;
-  padding: 0px;
+  padding: 0px;   height:100%;
 }
 
 #container {
   width: 1366px;
   margin: 0px auto;
+  min-height:100%;
+  position:relative;
+}
+
+#content {
+  padding-bottom: 480px;
 }
 
 /*header*/
@@ -51,6 +57,10 @@ body {
 }
 
 .topmenu a:hover#sign-in{
+  color: #ffffff;
+}
+
+.topmenu a.active#sign-in{
   color: #ffffff;
 }
 
@@ -474,4 +484,10 @@ footer .block a {
   text-align: center;
   font-size: 12px;
   font-weight: bold;
+}
+
+#bottom-footer {
+  height: 560px;
+  position: absolute;
+  bottom: 0;
 }

@@ -1,3 +1,7 @@
-<div id="main">
-  <%= render 'review_remote' %>
+<% provide(:orders, 'active') %>
+<div id="main-fon">
+  <div id="main">
+    <%= render 'review_remote' %>
+  </div>
+  <%= render 'shared/content_bottom' %>
 </div>
