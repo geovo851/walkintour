@@ -16,7 +16,6 @@ deploy:
   app: walkintour
   run:
   - rake db:migrate
-  - rake db:seed
   - restart
   on:
     branch: master
